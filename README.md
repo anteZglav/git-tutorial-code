@@ -1,6 +1,5 @@
 ## git-tutorial
 Toy shell for git tutorial purposes
-Developed without any help from that guy Slavko!
 
 Fork this repository, and then clone it by running the following command:
 
