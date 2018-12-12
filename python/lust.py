@@ -29,6 +29,20 @@ class FactorialCommand(LustObject):
       result *= i
     return result
 
+class SquareCommand(LustObject):
+  def handle(self, arguments):
+    argument = float(arguments[0])
+    print(self.__calculate_square(argument))
+
+  def print_help(self):
+    print(" square <real>")
+    print("   Calculates the square of <real>.")
+
+  def __calculate_square(self, argument):
+    return argument**2
+
+
+
 class QuitCommand(LustObject):
   def handle(self, arguments = None):
     print("Bye!")
@@ -61,7 +75,7 @@ commands["quit"] = QuitCommand()
 # help command needs a reference to the parent dictionary in order to call each
 # command's print_help() function
 commands["help"] = HelpCommand(commands)
-
+commands["square"] = SquareCommand()
 # input from Python 3 is raw_input in Python 2
 try: input = raw_input
 except NameError: pass
